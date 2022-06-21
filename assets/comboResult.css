@@ -1,0 +1,28 @@
+.pageContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 768px;
+    width: 100%;
+}
+
+.container {
+    text-align: center;
+    height: 100%;
+    width: 30%;
+    background-color: lightslategrey;
+}
+.btnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    height: 150px;
+    width: 200px;
+    margin: 50px;
+    background-color: lightslategrey;
+}
+#generate {
+    border: solid;
+}
