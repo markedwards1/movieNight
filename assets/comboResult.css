@@ -7,7 +7,10 @@
     width: 100%;
 }
 
-.container {
+.comboContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     text-align: center;
     height: 100%;
     width: 30%;
@@ -22,6 +25,16 @@
     width: 200px;
     margin: 50px;
     background-color: lightslategrey;
+}
+.comboPic {
+    width: 85%;
+    height: 40%;
+    background-color: aqua;
+}
+.comboDesc {
+    width: 85%;
+    height: 40%;
+    background-color:blue
 }
 #generate {
     border: solid;
