@@ -9,24 +9,28 @@
 color: black;
 }
 
+.pageContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 768px;
+    width: 100%;
+}
 /* div container around button */
-.container{
- background-color: #1a181aff;    
-padding: 40px;
-display: flex;
-justify-content: center;
-margin-left: 550px;
-margin-right: 550px;
-border-radius: 8px;
-border: solid;
-border-color: #505050ff;
+.btnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    height: 150px;
+    width: 200px;
+    margin: 50px;
+    background-color: lightslategrey;
 }
 
 /* button in container */
-.generate{
-padding: 10px;
-border-radius: 15%;
-color: black;
-background-color: #373737ff;
+#generate {
+    border: solid;
 }
 
