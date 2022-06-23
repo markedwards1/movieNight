@@ -1,0 +1,32 @@
+/* colours to be changed, box resize */
+
+/* main title h1 */
+.title{
+ font-size: 4rem;
+ display: flex;
+ justify-content: center;
+ margin-top: 200px;
+color: black;
+}
+
+/* div container around button */
+.container{
+ background-color: #1a181aff;    
+padding: 40px;
+display: flex;
+justify-content: center;
+margin-left: 550px;
+margin-right: 550px;
+border-radius: 8px;
+border: solid;
+border-color: #505050ff;
+}
+
+/* button in container */
+.generate{
+padding: 10px;
+border-radius: 15%;
+color: black;
+background-color: #373737ff;
+}
+
