@@ -8,7 +8,7 @@ const ingredients = document.getElementById('ingredients');
 
 
 //create random number
-const number = 1000;
+const number = 777281;
 const movieNumber = Math.floor(Math.random()* number);
 //console.log(movieNumber);
 getApiMovie();
@@ -26,15 +26,17 @@ function getApiMovie(){
         console.log(data);
     
        movieTitle.textContent = data.original_title;
-        review.textContent = data.overview;
 
+       review.textContent = data.overview;
 
+        
 
 
 
             const imgURL = data.poster_path;
             const movieImg = document.createElement('img')
-            movieImg.getAttribute("src", imgURL)
+            movieImg.setAttribute("src", "https://www.themoviedb.org/t/p/w500" + imgURL);
+            console.log(movieImg);
             moviePicContainer.appendChild(movieImg);
 
 
