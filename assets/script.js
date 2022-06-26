@@ -1,11 +1,14 @@
 //user is presented combo result page
 const movieTitle = document.getElementById('movieTitle');
 const moviePicContainer = document.getElementById('moviePic');
-const review = document.getElementById('review')
-const comboTitle = document.getElementById('snackTitle')
+const review = document.getElementById('review');
+const comboTitle = document.getElementById('snackTitle');
 const comboPic = document.getElementById('snackPic');
 const ingredients = document.getElementById('ingredients');
 
+const generate = document.getElementById('generate');
+
+ generate.addEventListener('click', generates());
 
 //create random number
 const number = 777281;
@@ -47,9 +50,39 @@ function getApiMovie(){
 
 }
 //display inforamtion using ID's
+function generates(){
+    const requestIngredientUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
 
 //fetch the food.
+  fetch(requestIngredientUrl)
+  .then(function(response){
+      return response.json();
+  })
+  // display information using ID's
+  .then(function(ingredientData){
+console.log(ingredientData.meals[0]);
+//Title 
+const recipetitle = ingredientData.meals[0].strMeal;
 
-// display information using ID's
+comboTitle.textContent = recipetitle;
+//Image
+const recipeImage = ingredientData.meals[0].strMealThumb;
 
-// add event listener / href to re-roll
+const imgTag = document.createElement("img");
+imgTag.src = recipeImage;
+comboPic.appendChild(imgTag);
+ 
+//Ingredients 
+    for (let i = 1; i < 21; i++) {
+        const ingredientList = ingredientData.meals[0]["strIngredient" + i];
+
+        if (ingredientList != "") {
+            // complete for loop ( remove extra 'dot points' )
+            const list = document.createElement("li");
+            list.textContent = ingredientList
+            ingredients.appendChild(list);
+        }
+    }
+ })
+
+ }
