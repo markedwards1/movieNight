@@ -14,7 +14,7 @@ const movieNumber = Math.floor(Math.random()* number);
 getApiMovie();
 
 //fetch movie
-//insert random number into url to search the movies. 
+//insert random number into url to search the movies. ...
 function getApiMovie(){
     let requestUrl = 'https://api.themoviedb.org/3/movie/' + movieNumber + '?api_key=417ba82f420aac26f214a4ce75d520d6';
    console.log(requestUrl);
