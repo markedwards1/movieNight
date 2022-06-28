@@ -11,6 +11,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-content: flex-start;
     text-align: center;
     height: 1080px;
     width: 30%;
@@ -42,17 +43,26 @@
     justify-content: center;
     width: 85%;
     height: 40%;
-    margin-bottom: 20px;
 }
 .comboPic img {
     width: 85%;
     height: 100%;
 }
+#ingredientsTitle {
+    width: 100%;
+    font-size: 3vh;
+    height: 3.5vh;
+}
 .comboDesc {
-    font-size: 1.5vh;
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 2vh;
     width: 85%;
-    height: 40%;
+}
+.comboDesc li {
+    width: 50%;
+    
 }
 .btnContainer a {
     display: flex;
@@ -84,10 +94,6 @@
         display: block;
         width: 85%;
     }
-    .comboDesc {
-        display: block;
-        width: 85%;
-    }
 }
 @media only screen and (max-width: 700px) {
     .comboContainer {
@@ -96,11 +102,11 @@
     }
     .btnContainer {
         height: 15vh;
-        width: 20vw;
+        width: 25vw;
     }
     #generate {
-        height: 8vh;
-        width: 15vw;
+        height: 10vh;
+        width: 20vw;
         font-size: 2vh;
     }
 }
