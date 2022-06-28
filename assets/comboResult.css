@@ -94,4 +94,13 @@
         width: 75%;
         height: auto;
     }
+    .btnContainer {
+        height: 15vh;
+        width: 20vw;
+    }
+    #generate {
+        height: 8vh;
+        width: 15vw;
+        font-size: 2vh;
+    }
 }
