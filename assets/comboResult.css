@@ -16,20 +16,22 @@
     width: 30%;
     background-color: lightslategrey;
     box-shadow: 2px 2px 10px 5px black;
-    border-radius: 5px;
+    border-radius: 2vh;
 }
 .btnContainer {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-content: center;
     border: solid;
-    height: 7.5vh;
+    height: 10vh;
     width: 10vw;
     margin: 50px;
     background-color: lightslategrey;
     box-shadow: 2px 2px 10px 5px black;
-    border-radius: 5px;
+    border-radius: 1vw;
 }
+
 .comboTitle {
     font-size: 4vh;
     width: 100%;
@@ -52,11 +54,21 @@
     width: 85%;
     height: 40%;
 }
+.btnContainer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #generate {
+    justify-content: center;
+    align-content: center;
+    padding: 0px;
+    margin: 0;
     border: solid;
     height: 5.25vh;
     width: 7vw;
-    font-size: 2vh;
+    font-size: 1.5vh;
+    border-radius: 1vw;
 }
 @media only screen and (min-width: 2000px) {
     .pageContainer {
@@ -75,5 +87,11 @@
     .comboDesc {
         display: block;
         width: 85%;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .comboContainer {
+        width: 75%;
+        height: auto;
     }
 }
