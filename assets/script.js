@@ -19,32 +19,43 @@ getApiMovie();
 //fetch movie
 //insert random number into url to search the movies. 
 function getApiMovie(){
+    let movieNumber = Math.floor(Math.random()* number);
     let requestUrl = 'https://api.themoviedb.org/3/movie/' + movieNumber + '?api_key=417ba82f420aac26f214a4ce75d520d6';
-   console.log(requestUrl);
-   fetch(requestUrl)
+    console.log(requestUrl);
+    fetch(requestUrl)
     .then(function (response){
+        
+        
         return response.json();
     })
     .then(function (data){
         console.log(data);
-    
-       movieTitle.textContent = data.original_title;
-
-       review.textContent = data.overview;
-
+        
+        movieTitle.textContent = data.original_title;
+        review.textContent = data.overview;
+        
+        if(data.adult === true){
+            location.reload();
+        }
+        
+        if(data.success === false){
+           
+            location.reload();
+        }
+        if(data.poster_path === null){
+            location.reload();
+        }
         
 
-
-
-            const imgURL = data.poster_path;
-            const movieImg = document.createElement('img')
-            movieImg.setAttribute("src", "https://www.themoviedb.org/t/p/w500" + imgURL);
-            console.log(movieImg);
-            moviePicContainer.appendChild(movieImg);
-
-
-
-
+        const imgURL = data.poster_path;
+        let movieImg = document.createElement('img')
+        moviePicContainer.appendChild(movieImg);
+        movieImg.setAttribute("src", "https://www.themoviedb.org/t/p/w500" + imgURL);
+        console.log(movieImg);
+        
+        
+        
+        
             
     })
 
