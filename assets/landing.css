@@ -1,33 +1,56 @@
 /* colours to be changed, box resize */
 
 /* main title h1 */
-.title{
- font-size: 4rem;
- display: flex;
- justify-content: center;
- margin-top: 200px;
-color: black;
-}
+
 
 .pageContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    height: 768px;
+    height: calc(100vw*0.5625);
+    width: 100vw;
+    padding: 0;
+}
+
+.title {
+    font-size: 5vh;
+    text-align: center;
     width: 100%;
 }
-/* div container around button */
+
 .btnContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    border: solid;
+    height: 10vh;
+    width: 10vw;
+    margin: 50px;
+    background-color: lightslategrey;
+    box-shadow: 2px 2px 10px 5px black;
+    border-radius: 1vw;
+}
+
+.btnContainer a {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid;
-    height: 150px;
-    width: 200px;
-    margin: 50px;
-    background-color: lightslategrey;
 }
+#generate {
+    justify-content: center;
+    align-content: center;
+    padding: 0px;
+    margin: 0;
+    border: solid;
+    height: 5.25vh;
+    width: 7vw;
+    font-size: 1.5vh;
+    border-radius: 1vw;
+}
+/* div container around button */
+
 
 /* button in container */
 #generate {

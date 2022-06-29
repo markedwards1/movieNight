@@ -7,7 +7,8 @@ const comboPic = document.getElementById('snackPic');
 const ingredients = document.getElementById('ingredients');
 
 const generate = document.getElementById('generate');
-
+const number = 777281
+let movieNumber = Math.floor(Math.random()* number);
 
 generate.addEventListener('click', function(event){
     event.preventDefault();
@@ -44,40 +45,57 @@ function addItemToStorage(key, itemName){
 
 //fetch movie
 //insert random number into url to search the movies. 
-function getApiMovie() {
-    const number = 777281;
-    const movieNumber = Math.floor(Math.random() * number);
+function getApiMovie(){
     let requestUrl = 'https://api.themoviedb.org/3/movie/' + movieNumber + '?api_key=417ba82f420aac26f214a4ce75d520d6';
     console.log(requestUrl);
     fetch(requestUrl)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            console.log(data);
-            moviePicContainer.textContent = "";
-            movieTitle.textContent = data.original_title;
+    .then(function (response){
+        
+        
+        return response.json();
+    })
+    .then(function (data){
+        console.log(data);
+        
+        if(data.adult === true){
+            location.reload();
+        }
+        
+        if(data.success === false){
+           
+            location.reload();
+        }
+        if(data.poster_path === null){
+            location.reload();
+        }
+        
+        movieTitle.textContent = data.original_title;
+        review.textContent = data.overview;
+        
 
-            review.textContent = data.overview;
+        
+
+
+        const imgURL = data.poster_path;
+        let movieImg = document.createElement('img');
+        movieImg.setAttribute("src", "https://www.themoviedb.org/t/p/w500" + imgURL);
+        console.log(movieImg);
+        moviePicContainer.appendChild(movieImg);
 
 
 
+         //localStorage for movie
+        const movieName = data.original_title;
+        addItemToStorage('movies', movieName);
 
-
-
-            const imgURL = data.poster_path;
-            const movieImg = document.createElement('img')
-            movieImg.setAttribute("src", "https://www.themoviedb.org/t/p/w500" + imgURL);
-            console.log(movieImg);
-            moviePicContainer.appendChild(movieImg);
-
-
-
-            //localStorage for movie
-            const movieName = data.original_title
-            addItemToStorage('movies', movieName);
-
-        })
+    })
+        
+        
+        
+        
+        
+            
+    
 
 }
 //display inforamtion using ID's
