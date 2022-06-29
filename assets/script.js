@@ -31,6 +31,7 @@ function getApiMovie(){
     .then(function (data){
         console.log(data);
         
+
         if(data.adult === true){
             location.reload();
         }
@@ -42,12 +43,17 @@ function getApiMovie(){
         if(data.poster_path === null){
             location.reload();
         }
+
+        
+
+
         
         movieTitle.textContent = data.original_title;
         review.textContent = data.overview;
         
 
         
+
 
         const imgURL = data.poster_path;
         let movieImg = document.createElement('img')
