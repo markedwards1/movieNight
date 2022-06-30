@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="resultsWrapper">
+
+        <ul id="comboList"> </ul>
+    </div>
+
+
+<script>
+    const resultsContainer = document.getElementById('resultsWrapper');
+    const comboList = document.getElementById('comboList');
+
+    let movies = JSON.parse(localStorage.getItem('movies')) || [];
+    let foods = JSON.parse(localStorage.getItem('foods')) || [];  
+
+
+
+function createComboLi(movie, food){
+
+    return `${movie} ${food}`
+
+}
+
+// clear out comboList to start fresh
+comboList.textContent = ""; 
+
+for (let i = 0; i < movies.length; i++) {
+    
+    // for each combo
+    // get the movie + food
+    const movie = movies[i];
+    const food = foods[i];
+
+
+    // create a html El and add it to the dom
+    // goal is to get movie + food combo
+
+    const comboLi = createComboLi(movie, food);
+
+     comboList.append(comboLi);
+    
+    
+}
+
+</script>
+</body>
+</html>
