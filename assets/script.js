@@ -55,34 +55,35 @@ function getApiMovie(){
         return response.json();
     })
     .then(function (data){
-        console.log(data);
+      
         
-
+// filter out adult conent
         if(data.adult === true){
             location.reload();
         }
-        
+// filter out broken images       
         if(data.success === false){
            
             location.reload();
         }
+
+        // filter out movies with no images. 
         if(data.poster_path === null){
             location.reload();
         }
 
-        
-
-
+        //text content out movie title and review. 
         
         movieTitle.textContent = data.original_title;
         review.textContent = data.overview;
         
 
         
-
+        // get movie image
 
         const imgURL = data.poster_path;
         let movieImg = document.createElement('img');
+        // customise the URL to have corrisponding movie paster. 
         movieImg.setAttribute("src", "https://www.themoviedb.org/t/p/w500" + imgURL);
         console.log(movieImg);
         moviePicContainer.appendChild(movieImg);
