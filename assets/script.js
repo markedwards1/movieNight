@@ -56,14 +56,14 @@ function getApiMovie(){
         console.log(data);
 
         if(data.adult === true){
-            location.reload();
+            getApiMovie();
         }
         
         if(data.success === false){
-            location.reload();
+            getApiMovie();
         }
         if(data.poster_path === null){
-            location.reload();
+            getApiMovie();
         }
 
         movieTitle.textContent = data.original_title;
