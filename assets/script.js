@@ -50,7 +50,7 @@ function getApiMovie(){
         
 
         const imgURL = data.poster_path;
-        let movieImg = document.createElement('img')
+        let movieImg = document.createElement('img');
         moviePicContainer.appendChild(movieImg);
         movieImg.setAttribute("src", "https://www.themoviedb.org/t/p/w500" + imgURL);
         console.log(movieImg);
