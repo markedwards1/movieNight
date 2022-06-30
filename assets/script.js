@@ -8,7 +8,6 @@ const ingredients = document.getElementById('ingredients');
 
 const generate = document.getElementById('generate');
 const number = 777281
-let movieNumber = Math.floor(Math.random()* number);
 
 generate.addEventListener('click', function(event){
     event.preventDefault();
@@ -16,8 +15,7 @@ generate.addEventListener('click', function(event){
     getFoodApi();
 });
 
-getApiMovie();
-getFoodApi();
+
 
 
 function getItems(key){
@@ -46,6 +44,7 @@ function addItemToStorage(key, itemName){
 //fetch movie
 //insert random number into url to search the movies. 
 function getApiMovie(){
+    let movieNumber = Math.floor(Math.random()* number);
     let requestUrl = 'https://api.themoviedb.org/3/movie/' + movieNumber + '?api_key=417ba82f420aac26f214a4ce75d520d6';
     console.log(requestUrl);
     fetch(requestUrl)
@@ -73,7 +72,6 @@ function getApiMovie(){
         review.textContent = data.overview;
         
 
-        
 
 
         const imgURL = data.poster_path;
