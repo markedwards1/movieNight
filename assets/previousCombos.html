@@ -4,29 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Previous Combos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./comboResult.css">
 </head>
 
-<body>
+<body class = "pageContainer">
 
     <div class="resultsWrapper">
 
         <ul id="comboList"> </ul>
     </div>
-
+    <div class = "btnContainer">
+        
+        <button id="return">Return</button>
+        
+    </div>
 
 <script>
     const resultsContainer = document.getElementById('resultsWrapper');
     const comboList = document.getElementById('comboList');
+    const returnEl = document.getElementById('return');
 
     let movies = JSON.parse(localStorage.getItem('movies')) || [];
     let foods = JSON.parse(localStorage.getItem('foods')) || [];  
 
 
+    returnEl.addEventListener('click', function(event){
+    location.assign("../index.html");
+});
 
 function createComboLi(movie, food){
 
-    return `${movie} ${food}`
+    return `${movie} "matched with" ${food}`
 
 }
 
@@ -46,7 +58,9 @@ for (let i = 0; i < movies.length; i++) {
 
     const comboLi = createComboLi(movie, food);
 
-     comboList.append(comboLi);
+    linebreak = document.createElement("br");
+    comboList.append(comboLi);
+    comboList.append(linebreak);
     
     
 }
