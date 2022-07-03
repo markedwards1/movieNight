@@ -3,37 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--links internal and external style sheets to html-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./comboResult.css">
-    <title>Document</title>
+    <title>Combination</title>
 </head>
 <body>
-    <main class="pageContainer">
-        <section class="comboContainer" id="movie">
-            <h1 class = "comboTitle" id="movieTitle"></h1>
-            <a class = "comboPic" id="moviePic">
+    <main class="pageContainer"> <!--Container for flexbox purposes-->
+        <section class="comboContainer" id="movie"> <!--Container for flexbox purposes, and id=movie for js purposes-->
+            <h1 class = "comboTitle" id="movieTitle"></h1>  <!--Container for flexbox purposes, and id=movieTitle for js purposes and to display title to DOM-->
+            <a class = "comboPic" id="moviePic"> <!--Container for flexbox purposes, and id=moviePic for js purposes and to display picture to DOM-->
                 
             </a>
-            <h4 id = "ingredientsTitle">Description</h4>
-            <p class = "comboDesc" id="review"></p>
+            <h4 id = "ingredientsTitle">Description</h4> <!--Container for flexbox purposes-->
+            <p class = "comboDesc" id="review"></p><!--Container for flexbox purposes, and id=review for js purposes and to display review to DOM-->
         </section>
-        <div class = "btnContainer">
+        <div class = "btnContainer"> <!--Container for flexbox purposes-->
             
-            <button id="generate">Re-Roll</button>
-            <button id="previous">Previous</button>
+            <button id="generate">Roll</button> <!--ID for js functionality-->
+            <button id="previous">Previous</button> <!--ID for js functionality-->
             
         </div>
-        <section class="comboContainer" id="snack">
-            <h1 class="comboTitle" id="snackTitle"></h1>
-            <a class="comboPic" id="snackPic"></a>
-            <h4 id = "ingredientsTitle">Ingredients</h4>
-            <p class="comboDesc" id="ingredients"></p>
+        <section class="comboContainer" id="snack"> <!--Container for flexbox purposes, and id=snack for js purposes-->
+            <h1 class="comboTitle" id="snackTitle"></h1> <!--Container for flexbox purposes, and id=snackTitle for js purposes and to display title to DOM-->
+            <a class="comboPic" id="snackPic"></a> <!--Container for flexbox purposes, and id=snackPic for js purposes and to display picture to DOM-->
+            <h4 id = "ingredientsTitle">Ingredients</h4> <!--Container for flexbox purposes-->
+            <p class="comboDesc" id="ingredients"></p> <!--Container for flexbox purposes, and id=review for js purposes and to display ingredients to DOM-->
    
         </section>
     </main>
+    <!--Links javascript to html-->
     <script src="./script.js"></script>
 </body>
 </html>

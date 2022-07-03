@@ -5,40 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Previous Combos</title>
+    <!--Links to internal and external style sheets-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./comboResult.css">
 </head>
 
-<body class = "pageContainer">
+<body class = "pageContainer"> <!--Container for flexbox purposes-->
 
-    <div class="resultsWrapper">
+    <div class="resultsWrapper"> <!--Container for flexbox purposes-->
 
-        <ul id="comboList"> </ul>
+        <ul id="comboList"> </ul> <!--List, elements to bev added in through javascript-->
     </div>
-    <div class = "btnContainer">
+    <div class = "btnContainer"> <!--Container for flexbox purposes-->
         
-        <button id="return">Return</button>
+        <button id="return">Return</button> <!--button to return to index.html-->
         
     </div>
 
 <script>
-    const resultsContainer = document.getElementById('resultsWrapper');
-    const comboList = document.getElementById('comboList');
-    const returnEl = document.getElementById('return');
+    const resultsContainer = document.getElementById('resultsWrapper'); // collects element containing class resultsWrapper as a js variable
+    const comboList = document.getElementById('comboList'); // collects element containing id comboList as a js variable
+    const returnEl = document.getElementById('return');  // collects element containing id return as a js variable
 
-    let movies = JSON.parse(localStorage.getItem('movies')) || [];
-    let foods = JSON.parse(localStorage.getItem('foods')) || [];  
+    let movies = JSON.parse(localStorage.getItem('movies')) || []; // gets movies from local storage
+    let foods = JSON.parse(localStorage.getItem('foods')) || [];   // gets food from local storage
 
 
-    returnEl.addEventListener('click', function(event){
+    returnEl.addEventListener('click', function(event){ // user is redirected to landing page once button clicked
     location.assign("../index.html");
 });
 
 function createComboLi(movie, food){
 
-    return `${movie} "matched with" ${food}`
+    return `${movie} "matched with" ${food}` // displays prev combos to dom
 
 }
 

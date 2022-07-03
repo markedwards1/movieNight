@@ -1,8 +1,4 @@
-/* colours to be changed, box resize */
-
-/* main title h1 */
-
-
+/*container for page dimensions, set display to flex to position elements within*/
 .pageContainer {
     display: flex;
     flex-wrap: wrap;
@@ -12,13 +8,13 @@
     width: 100vw;
     padding: 0;
 }
-
+/*Sets sizing and positioning of title*/
 .title {
     font-size: 5vh;
     text-align: center;
     width: 100%;
 }
-
+/*sets postioning, size, and styling for button container. Display set to flex to allow for styling of elements within*/
 .btnContainer {
     display: flex;
     flex-wrap: wrap;
@@ -32,12 +28,13 @@
     box-shadow: 2px 2px 10px 5px black;
     border-radius: 1vw;
 }
-
+/*sets positioning of buttons within container*/
 .btnContainer a {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+/*sets postioning, size, and styling for button. Display set to flex to allow for styling of elements within*/
 #start {
     justify-content: center;
     align-content: center;
@@ -67,12 +64,18 @@
 #generate {
     border: solid;
 }
+/*Changes styling once screen width is under 700px*/
 @media only screen and (max-width: 700px) {
     .btnContainer {
-        height: 15vh;
+        height: 30vh;
         width: 25vw;
     }
-    #generate {
+    #start {
+        height: 10vh;
+        width: 20vw;
+        font-size: 2vh;
+    }
+    #previous {
         height: 10vh;
         width: 20vw;
         font-size: 2vh;

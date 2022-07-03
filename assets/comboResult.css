@@ -1,3 +1,4 @@
+/*container for page dimensions, set display to flex to position elements within*/ 
 .pageContainer {
     display: flex;
     flex-wrap: wrap;
@@ -6,7 +7,7 @@
     height: 100%;
     width: 100vw;
 }
-
+/*Container for snack and movie containers, set display to flex to position items within, sizing and color also set*/
 .comboContainer {
     display: flex;
     flex-wrap: wrap;
@@ -19,6 +20,7 @@
     box-shadow: 2px 2px 10px 5px black;
     border-radius: 2vh;
 }
+/*Container for button container, set display to flex to position items within, sizing and color also set*/
 .btnContainer {
     display: flex;
     flex-wrap: wrap;
@@ -32,11 +34,12 @@
     box-shadow: 2px 2px 10px 5px black;
     border-radius: 1vw;
 }
-
+/*Title styling and size set*/
 .comboTitle {
     font-size: 4vh;
     width: 100%;
 }
+/*Picture container size set and display set to flex for styling elements within*/
 .comboPic {
     display: flex;
     flex-wrap: wrap;
@@ -44,15 +47,18 @@
     width: 85%;
     height: 40%;
 }
+/*Sizing for image set*/
 .comboPic img {
     width: 85%;
     height: 100%;
 }
+/*Sizing set for title*/ 
 #ingredientsTitle {
     width: 100%;
     font-size: 3vh;
     height: 3.5vh;
 }
+/*Sizing set for descriptions and display set to flex to position items within*/
 .comboDesc {
     display: flex;
     flex-wrap: wrap;
@@ -60,16 +66,20 @@
     font-size: 2vh;
     width: 85%;
 }
+/*width of ingredient list elements set*/
 .comboDesc li {
     width: 50%;
     
 }
+/*Styling for button links, and positioning of links set*/
 .btnContainer a {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+/*Styling of generate button set*/
 #generate {
+    display: block;
     justify-content: center;
     align-content: center;
     padding: 0px;
@@ -81,6 +91,7 @@
     border-radius: 1vw;
     margin-bottom: 1vh;
 }
+/*Styling of previous button set*/
 #previous {
     justify-content: center;
     align-content: center;
@@ -92,22 +103,27 @@
     font-size: 1.5vh;
     border-radius: 1vw;
 }
+/*Container for results wrapper, set display to flex to position items within, sizing and color also set*/
 .resultsWrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
     text-align: center;
-    height: 500px;
-    width: 50%;
+    height: auto;
+    width: 80%;
     background-color: lightslategrey;
     box-shadow: 2px 2px 10px 5px black;
     border-radius: 2vh;
 }
+/*Sets sizing and positioning of elements with combolist id*/
 #comboList {
     line-height: 10vh;
     font-weight: bold;
-}
+    font-size: 5vh;
+    text-align: center;
+}   
+/*Styling of return button set*/
 #return {
     justify-content: center;
     align-content: center;
@@ -119,6 +135,7 @@
     font-size: 1.5vh;
     border-radius: 1vw;
 }
+/*Styling changes for screens with min wdth of 2000px*/
 @media only screen and (min-width: 2000px) {
     .pageContainer {
     height: calc(100vw*0.5625);
@@ -134,16 +151,22 @@
         width: 85%;
     }
 }
+/*Styling changes for screens with max wdth of 700px*/
 @media only screen and (max-width: 700px) {
     .comboContainer {
         width: 75%;
         height: auto;
     }
     .btnContainer {
-        height: 15vh;
+        height: 30vh;
         width: 25vw;
     }
     #generate {
+        height: 10vh;
+        width: 20vw;
+        font-size: 2vh;
+    }
+    #previous {
         height: 10vh;
         width: 20vw;
         font-size: 2vh;
