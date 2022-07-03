@@ -1,18 +1,19 @@
 //user is presented combo result page
-const movieTitle = document.getElementById('movieTitle');
-const moviePicContainer = document.getElementById('moviePic');
-const review = document.getElementById('review');
-const comboTitle = document.getElementById('snackTitle');
-const comboPic = document.getElementById('snackPic');
-const ingredients = document.getElementById('ingredients');
-const generate = document.getElementById('generate');
-const previous = document.getElementById('previous');
-const number = 777281
+const movieTitle = document.getElementById('movieTitle'); // stores element containing id movieTitle in variable for JS functionality
+const moviePicContainer = document.getElementById('moviePic'); // stores element containing id moviePic in variable for JS functionality
+const review = document.getElementById('review'); // stores element containing id review in variable for JS functionality
+const comboTitle = document.getElementById('snackTitle'); // stores element containing id snackTitle in variable for JS functionality
+const comboPic = document.getElementById('snackPic'); // stores element containing id snackPic in variable for JS functionality
+const ingredients = document.getElementById('ingredients'); // stores element containing id ingredients in variable for JS functionality
+const generate = document.getElementById('generate'); // stores element containing id generate in variable for JS functionality
+const previous = document.getElementById('previous'); // stores element containing id previous in variable for JS functionality
+const number = 777281;
 
 generate.addEventListener('click', function(event){
     event.preventDefault();
     getApiMovie();
 });
+
 previous.addEventListener('click', function(event){
     location.assign("./previousCombos.html");
 });
@@ -43,44 +44,44 @@ function addItemToStorage(key, itemName){
 //fetch movie
 //insert random number into url to search the movies. 
 function getApiMovie(){
-    const movieNumber = Math.floor(Math.random()* number);
-    let requestUrl = 'https://api.themoviedb.org/3/movie/' + movieNumber + '?api_key=417ba82f420aac26f214a4ce75d520d6';
-    console.log(requestUrl);
-    fetch(requestUrl)
+    const movieNumber = Math.floor(Math.random()* number); // gets random movie id to search for
+    let requestUrl = 'https://api.themoviedb.org/3/movie/' + movieNumber + '?api_key=417ba82f420aac26f214a4ce75d520d6'; // creates url for fetching
+    fetch(requestUrl) // fetches url
     .then(function (response){
         
         
         return response.json();
     })
     .then(function (data){
-        console.log(data);
-
+        
+        // checks that url has poster image, is not adult content, and is not a 404 before continuing with processes
         if(data.adult === true){
             getApiMovie();
         }
         
-        if(data.success === false){
+        else if(data.success === false){
             getApiMovie();
         }
-        if(data.poster_path === null){
+        else if(data.poster_path === null){
             getApiMovie();
         }
+        else {
 
-        movieTitle.textContent = data.original_title;
-        review.textContent = data.overview;
+            movieTitle.textContent = data.original_title; // gets movie title from API
+            review.textContent = data.overview; // gets review from API
         
-        const imgURL = data.poster_path;
+            const imgURL = data.poster_path; // gets movie poster from API
 
-        const movieImg = document.createElement("img");
-        movieImg.src = "https://www.themoviedb.org/t/p/w500" + imgURL;
-        moviePicContainer.innerHTML = "";
-        moviePicContainer.appendChild(movieImg);
-         //localStorage for movie
-        const movieName = data.original_title;
-        addItemToStorage('movies', movieName);
-
+            const movieImg = document.createElement("img"); // creates image element in html
+            movieImg.src = "https://www.themoviedb.org/t/p/w500" + imgURL; // sets source of img
+            moviePicContainer.innerHTML = ""; // resets values for image
+            moviePicContainer.appendChild(movieImg); // appends image and displays to dom
+            //localStorage for movie
+            const movieName = data.original_title;
+            addItemToStorage('movies', movieName);
+            getFoodApi(); // calls upon getFoodAPI
+        }
     })
-    getFoodApi();
 }
 //display inforamtion using ID's
 function getFoodApi() {
@@ -97,7 +98,6 @@ function getFoodApi() {
             comboPic.textContent = "";
             ingredients.textContent ="";
 
-            console.log(ingredientData.meals[0]);
             //Title 
             const recipetitle = ingredientData.meals[0].strMeal;
 
@@ -116,7 +116,7 @@ function getFoodApi() {
                 if (ingredientList != "") {
                     // complete for loop ( remove extra 'dot points' )
                     const list = document.createElement("li");
-                    list.textContent = ingredientList
+                    list.textContent = ingredientList;
                     ingredients.appendChild(list);
                 }
             }
